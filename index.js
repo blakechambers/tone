@@ -30,3 +30,5 @@ export function stringToOffset(s, scale){
   
   return scale[note-1] + (octave * 12);
 }
+
+export function dsp(t) { return 0; }
