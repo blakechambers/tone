@@ -4,10 +4,10 @@
  * @author blakechambers
  * @desc    topn
  * @license mit
- * 
- * 
+ *
+ *
  */
- 
+
 import { stringToNote } from 'opendsp/note';
 import { scales } from 'stagas/scales';
 
@@ -27,8 +27,6 @@ export function stringToOffset(s){
   var octave = parseInt(s[s.length - 1], 10);
   if (isNaN(octave)) octave = 4;
   var note = parseInt(s[0]);
-  
+
   return scale[note-1] + (octave * 12);
 }
-
-export function dsp(t) { return 0; }
