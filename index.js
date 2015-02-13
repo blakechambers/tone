@@ -11,7 +11,7 @@
 import { stringToNote } from 'opendsp/note';
 import { scales } from 'stagas/scales';
 
-var scale = scales.major;
+var scale = scales['major'];
 
 export default function NoteInKey(key) {
   var base  = stringToNote(key);
