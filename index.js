@@ -20,11 +20,11 @@ export default function NoteInKey(key) {
 }
 
 function stringToOffset(s){
-  var s = s.split('');
+  var value = s.split('');
   
-  var octave = parseInt(s[s.length - 1], 10);
+  var octave = parseInt(value[value.length - 1], 10);
   if (isNaN(octave)) octave = 4;
-  var note = parseInt(s[0], 10);
+  var note = parseInt(value[0], 10);
 
   return scale[note-1] + (octave * 12);
 }
