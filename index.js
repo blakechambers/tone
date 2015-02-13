@@ -20,7 +20,7 @@ export default function NoteInKey(key) {
 }
 
 function stringToOffset(s){
-  s = s.split('');
+  var s = s.split('');
   
   var octave = parseInt(s[s.length - 1], 10);
   if (isNaN(octave)) octave = 4;
