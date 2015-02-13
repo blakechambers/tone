@@ -10,7 +10,7 @@ import { scales } from 'stagas/scales';
 
 export default function NoteInKey(key) {
   var base  = stringToNote(key);
-  var scale = scales['major'];
+  var scale = scales.major;
 
   return function(n) {
     if ('string' === typeof n) n = stringToOffset(n, scale);
@@ -21,7 +21,7 @@ export default function NoteInKey(key) {
 function stringToOffset(s, scale){
   var value = s.split('');
   
-  var octave = parseInt(value[value.length - 1], 10);
+  var octave = parseInt(value[1], 10);
   if (isNaN(octave)) octave = 4;
   var note = parseInt(value[0], 10);
 
