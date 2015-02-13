@@ -14,7 +14,7 @@ export default function NoteInKey(key) {
   var base  = stringToNote(key);
 
   return function(n) {
-    if ('string' === typeof n) n = stringToOffset(n, scale);
+    if ('string' === typeof n) n = stringToOffset(n);
     return Math.pow(2, ((base + n) - 57)/12) * 440;
   };
 }
