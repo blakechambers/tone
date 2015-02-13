@@ -1,11 +1,8 @@
 
 /**
- * @name tone
- * @author blakechambers
- * @desc    topn
+ * @module  tone
+ * @author  blakechambers
  * @license mit
- *
- *
  */
 
 import { stringToNote } from 'opendsp/note';
@@ -24,6 +21,7 @@ export default function NoteInKey(key) {
 
 export function stringToOffset(s){
   s = s.split('');
+  
   var octave = parseInt(s[s.length - 1], 10);
   if (isNaN(octave)) octave = 4;
   var note = parseInt(s[0]);
