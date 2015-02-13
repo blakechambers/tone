@@ -8,18 +8,17 @@
 import { stringToNote } from 'opendsp/note';
 import { scales } from 'stagas/scales';
 
-var scale = scales['major'];
-
 export default function NoteInKey(key) {
   var base  = stringToNote(key);
+  var scale = scales['major'];
 
   return function(n) {
-    if ('string' === typeof n) n = stringToOffset(n);
+    if ('string' === typeof n) n = stringToOffset(n, scale);
     return Math.pow(2, ((base + n) - 57)/12) * 440;
   };
 }
 
-function stringToOffset(s){
+function stringToOffset(s, scale){
   var value = s.split('');
   
   var octave = parseInt(value[value.length - 1], 10);
