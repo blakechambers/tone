@@ -6,11 +6,11 @@
  */
 
 import { stringToNote } from 'opendsp/note';
-import { scales } from 'stagas/scales';
+// import { scales } from 'stagas/scales';
 
 export default function NoteInKey(key) {
   var base  = stringToNote(key);
-  var scale = scales.major;
+  var scale = [0, 2, 4, 5, 7, 9, 11];
 
   return function(n) {
     if ('string' === typeof n) n = stringToOffset(n, scale);
@@ -19,11 +19,11 @@ export default function NoteInKey(key) {
 }
 
 function stringToOffset(s, scale){
-  var value = s.split('');
+  var pair = s.split('');
   
-  var octave = parseInt(value[1], 10);
+  var octave = parseInt(pair[1], 10);
   if (isNaN(octave)) octave = 4;
-  var note = parseInt(value[0], 10);
+  var note = parseInt(pair[0], 10);
 
   return scale[note-1] + (octave * 12);
 }
